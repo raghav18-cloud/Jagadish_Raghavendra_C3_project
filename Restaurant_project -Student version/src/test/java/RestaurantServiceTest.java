@@ -9,8 +9,18 @@ class RestaurantServiceTest {
 
     RestaurantService service = new RestaurantService();
     Restaurant restaurant;
-    //REFACTOR ALL THE REPEATED LINES OF CODE
 
+     //REFACTOR ALL THE REPEATED LINES OF CODE
+    LocalTime openingTime = LocalTime.parse("10:30:00");
+    LocalTime closingTime = LocalTime.parse("23:00:00");
+    RestaurantService service = new RestaurantService();
+    Restaurant restaurant;
+
+    {
+        restaurant = service.addRestaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
+        restaurant.addToMenu("Sweet corn soup", 100);
+        restaurant.addToMenu("Vegetable lasagne", 200);
+    }
 
     //>>>>>>>>>>>>>>>>>>>>>>SEARCHING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
